@@ -1,0 +1,25 @@
+<h3 style="color: brown;">Favoraite Products</h3>
+<div class="product-fav">
+    <div    *ngFor="let x of productscart" class="cart-item">
+        <img class="card-img rounded-0 img-fluid" [src]="x.image" style="height: 60px; width:60px">
+      <div class="product-details">
+        <!-- Display the product details here -->
+        <h3>{{ x.title }}</h3>
+        <p>Price: {{x.price }}</p>
+   
+      </div>
+      <div class="actions">
+        <!-- View Details Button -->
+        <button [routerLink]="['/details', x.id]" class="btn">View Details</button>
+        
+        <!-- Increase and Decrease Quantity Buttons 
+        <button (click)="decreaseQuantity(x)" class="btn">-</button>
+        <button (click)="increaseQuantity(x)" class="btn">+</button>
+             <p>Quantity: {{ x.quantity }}</p>-->
+        <!-- Remove Product Button -->
+       <button (click)="remove(x.id)" class="btn">Remove</button>
+    <button type="submit" class="btn btn-success btn-lg" name="submit"
+        value="addtocard" [routerLink]="['/../cart']" (click)=" addtocart(x)">Add To Cart</button>
+      </div>
+    </div>
+  </div>

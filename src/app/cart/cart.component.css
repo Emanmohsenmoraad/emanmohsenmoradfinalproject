@@ -1,0 +1,41 @@
+.cart {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width:600px;
+  }
+  
+  h2 {
+    margin: 0 0 10px;
+  }
+  
+  .product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  .product-details {
+    flex-grow: 1;
+  }
+  
+  h3 {
+    margin: 0 0 5px;
+  }
+  
+  .product-price {
+    font-weight: bold;
+  }
+  
+  .remove-btn {
+    background-color: #ff5b5b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }

@@ -1,0 +1,59 @@
+<!--<div class="product-cart">
+    <div    *ngFor="let x of productscart" class="cart-item">
+        <img class="card-img rounded-0 img-fluid" [src]="x.image" style="height: 60px; width:60px">
+      <div class="product-details">
+       Display the product details here 
+        <h3>{{ x.title }}</h3>
+        <p>Price: {{x.price }}</p>-->
+
+<!--   </div>
+      <div class="actions">
+        View Details Button 
+        <button [routerLink]="['/details', x.id]" class="btn">View Details</button>
+        
+
+        <button (click)="remove(x.id)" class="btn">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart">
+    <h2>Product Cart</h2>
+    <div class="product"  *ngFor="let x of productscart">
+      <img [src]="x.image"  alt="Product Image">
+      <div class="product-details">
+        <h3>{{ x.title }}</h3>
+        <p>{{ x.description}}</p>
+      </div>
+      <div class="product-price">
+        <p>$9</p>
+      </div>
+      <button [routerLink]="['/details', x.id]" class="btn btn-warning">View Details</button>
+        
+
+      <button (click)="remove(x.id)" class="btn btn-danger">Remove</button>
+   
+</div>
+  </div>-->
+<div class="container">
+  <h2>Product Cart</h2>
+  <div class="cart">
+    <div class="row product" *ngFor="let x of productscart">
+      <div class="col-sm-3">
+        <img [src]="x.image" alt="Product Image" class="img-fluid">
+      </div>
+      <div class="col-sm-6">
+        <h3>Product Name: {{ x.title }}</h3>
+        <p>Product Description : {{ x.description|slice:0:150}}</p>
+
+
+        <p>${{x.price }}</p>
+
+
+        <button [routerLink]="['/details', x.id]" class="btn btn-warning">View Details</button>
+
+
+        <button (click)="remove(x.id)" class="btn btn-danger">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

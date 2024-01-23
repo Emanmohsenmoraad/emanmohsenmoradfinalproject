@@ -1,0 +1,43 @@
+<!-- Start Featured Product -->
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Featured Product</h1>
+                <p>
+                    Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4" *ngFor="let products of topProducts ">
+                <div class="card h-100">
+                    <a href=""  [routerLink]="['/details',products.id]">
+                        <img [src]="products.image" class="card-img-top" alt="..." style="width: 300px;height: 300px;">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li >
+                              <i *ngFor="let star of getFilledStars(products.rating.rate)" class="text-warning fa fa-star"></i>
+                         
+             
+                              <i *ngFor="let star of getEmptyStars(5-products.rating.rate)" class="text-muted fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">${{ products.price }}</li>
+                          </ul>
+                        <a href=""  [routerLink]="['details',products.id]" class="h2 text-decoration-none text-dark">{{products.title}}</a>
+                        <p class="card-text">
+                          {{products.description | slice:0:250}}
+                        </p>
+                        <p class="text-muted">  {{products.rating.count}} <b>Comments</b></p>
+                    </div>
+                </div>
+            </div>
+           
+             
+            
+        </div>
+    </div>
+</section>
+<!-- End Featured Product -->
